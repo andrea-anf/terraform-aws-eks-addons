@@ -55,11 +55,11 @@
 | <a name="input_enable_amazon_eks_vpc_cni"></a> [enable\_amazon\_eks\_vpc\_cni](#input\_enable\_amazon\_eks\_vpc\_cni) | n/a | `bool` | `false` | no |
 | <a name="input_enable_argocd"></a> [enable\_argocd](#input\_enable\_argocd) | n/a | `bool` | `false` | no |
 | <a name="input_enable_aws_for_fluentbit"></a> [enable\_aws\_for\_fluentbit](#input\_enable\_aws\_for\_fluentbit) | n/a | `bool` | `false` | no |
-| <a name="input_enable_aws_load_balancer_controller"></a> [enable\_aws\_load\_balancer\_controller](#input\_enable\_aws\_load\_balancer\_controller) | n/a | `bool` | `true` | no |
+| <a name="input_enable_aws_load_balancer_controller"></a> [enable\_aws\_load\_balancer\_controller](#input\_enable\_aws\_load\_balancer\_controller) | n/a | `bool` | `false` | no |
 | <a name="input_enable_aws_node_termination_handler"></a> [enable\_aws\_node\_termination\_handler](#input\_enable\_aws\_node\_termination\_handler) | n/a | `bool` | `false` | no |
 | <a name="input_enable_cluster_autoscaler"></a> [enable\_cluster\_autoscaler](#input\_enable\_cluster\_autoscaler) | n/a | `bool` | `false` | no |
 | <a name="input_enable_fargate_fluentbit"></a> [enable\_fargate\_fluentbit](#input\_enable\_fargate\_fluentbit) | n/a | `bool` | `false` | no |
-| <a name="input_enable_grafana"></a> [enable\_grafana](#input\_enable\_grafana) | Boolean to enable grafana add-on | `bool` | `true` | no |
+| <a name="input_enable_grafana"></a> [enable\_grafana](#input\_enable\_grafana) | Boolean to enable grafana add-on | `bool` | `false` | no |
 | <a name="input_enable_ingress_nginx"></a> [enable\_ingress\_nginx](#input\_enable\_ingress\_nginx) | n/a | `bool` | `false` | no |
 | <a name="input_enable_karpenter"></a> [enable\_karpenter](#input\_enable\_karpenter) | Boolean to enable karpenter add-on | `bool` | `false` | no |
 | <a name="input_enable_keda"></a> [enable\_keda](#input\_enable\_keda) | n/a | `bool` | `false` | no |
@@ -74,7 +74,7 @@
 | <a name="input_karpenter_tag_name"></a> [karpenter\_tag\_name](#input\_karpenter\_tag\_name) | Tag Name for Karpenter | `string` | `""` | no |
 | <a name="input_managed_node_group_iam_instance_profile_id"></a> [managed\_node\_group\_iam\_instance\_profile\_id](#input\_managed\_node\_group\_iam\_instance\_profile\_id) | IAM instance profile id of managed node groups | `string` | `""` | no |
 | <a name="input_node_group_name"></a> [node\_group\_name](#input\_node\_group\_name) | managed node group name | `string` | `""` | no |
-| <a name="input_region"></a> [region](#input\_region) | region | `string` | `"eu-west-1"` | no |
+| <a name="input_region"></a> [region](#input\_region) | region | `string` | `""` | no |
 | <a name="input_worker_node_security_group_id"></a> [worker\_node\_security\_group\_id](#input\_worker\_node\_security\_group\_id) | ID of the worker node shared security group | `string` | `""` | no |
 
 ## Outputs

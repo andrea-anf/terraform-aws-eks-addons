@@ -69,7 +69,7 @@ variable "node_group_name" {
 variable "region" {
   type = string
   description = "region"
-  default = "eu-west-1"
+  default = ""
 }
 
 variable "azs" {
@@ -119,7 +119,7 @@ variable "block_device_mappings_volume_size" {
 variable "enable_grafana" {
   type = bool
   description = "Boolean to enable grafana add-on"
-  default = true
+  default = false
 }
 
 variable "enable_amazon_eks_vpc_cni" {
@@ -154,7 +154,7 @@ variable "enable_aws_for_fluentbit" {
 
 variable "enable_aws_load_balancer_controller" {
   type = bool
-  default = true
+  default = false
 }
 
 variable "enable_cluster_autoscaler" {
