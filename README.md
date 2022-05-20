@@ -1,3 +1,8 @@
+The module allows the user to install add-ons in an EKS cluster. 
+
+This repository has been extracted from https://github.com/aws-ia/terraform-aws-eks-blueprints.
+
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
