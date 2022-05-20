@@ -65,7 +65,7 @@ data "kubectl_path_documents" "karpenter_provisioners" {
 }
 
 module "grafana" {
-  source = "git@github.com:lablabs/terraform-aws-eks-grafana.git"
+  source = "git::https://github.com/lablabs/terraform-aws-eks-grafana.git"
 
   enabled = var.enable_grafana
   cluster_identity_oidc_issuer     = var.eks_oidc_issuer_url
