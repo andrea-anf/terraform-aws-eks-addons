@@ -2,7 +2,29 @@ The module allows the user to install add-ons in an EKS cluster.
 
 This repository has been extracted from https://github.com/aws-ia/terraform-aws-eks-blueprints.
 
+## Usage
+This is a basic usage of the module:
+```
+module "eks-addons" {
+  source = "git@bitbucket.org:beetobit/terraform-aws-eks-addons.git?ref=1.0"
 
+  region = "eu-west-1"
+  azs = ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
+
+  cluster_version = "1.21"
+  eks_cluster_id = "my-cluster"
+  eks_cluster_endpoint = "https://xxx.eks.amazonaws.com"
+  eks_cluster_certificate_authority_data = "LS0tLS1CRUdJ=="
+  node_group_name = "my-nodegroup"
+  managed_node_group_iam_instance_profile_id = "my-cluster-iam-role"
+  worker_node_security_group_id = "my-worker-node-security-group-id"
+  block_device_mappings_volume_type = "gp3"
+  block_device_mappings_volume_size = "100"
+  
+  ##add add-ons to enable
+  enable_<addon_name> = true
+}
+```
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 

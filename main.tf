@@ -59,8 +59,8 @@ data "kubectl_path_documents" "karpenter_provisioners" {
   pattern = "${path.module}/provisioners/default_provisioner.yaml"
   vars = {
     azs                     = join(",", var.azs)
-    iam-instance-profile-id = format("%s-%s", var.eks_cluster_name, var.node_group_name)
-    eks-cluster-id          = var.eks_cluster_name
+    iam-instance-profile-id = format("%s-%s", var.eks_cluster_id, var.node_group_name)
+    eks-cluster-id          = var.eks_cluster_id
   }
 }
 

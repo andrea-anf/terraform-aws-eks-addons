@@ -1,3 +1,29 @@
+##### REQUIRED VARIABLES #####
+
+variable "region" {
+  type = string
+  description = "region"
+  default = ""
+}
+
+variable "azs" {
+  type = list(string)
+  description = "list of availability zones"
+  default = []
+}
+
+variable "cluster_version" {
+  type = string
+  description = "cluster version (e.g. 1.21)"
+  default = ""
+}
+
+variable "eks_cluster_id" {
+  type = string
+  description = "cluster id"
+  default = ""
+}
+
 variable "eks_cluster_endpoint" {
   type = string
   description = "cluster endpoint"
@@ -10,7 +36,46 @@ variable "eks_cluster_certificate_authority_data" {
   default = ""
 }
 
+variable "node_group_name" {
+  type = string
+  description = "ncluster's nodegroup name where to apply the addons"
+  default = "managed-nodegroup"
+}
+
+variable "managed_node_group_iam_instance_profile_id" {
+  type = string
+  description = "IAM instance profile id of managed node groups"
+  default = ""
+}
+
+variable "worker_node_security_group_id" {
+  type = string
+  description = "ID of the worker node shared security group"
+  default = ""
+}
+
+variable "block_device_mappings_volume_type" {
+  type = string
+  description = "Volume type to assign to instances"
+  default = "gp3"
+}
+
+variable "block_device_mappings_volume_size" {
+  type = string
+  description = "Volume size to assign to instances"
+  default = "100"
+}
+
+
+##### ADD-ONS #####
+
 #Grafana
+
+variable "enable_grafana" {
+  type = bool
+  description = "Boolean to enable grafana add-on"
+  default = false
+}
 
 variable "eks_oidc_issuer_url" {
   type = string
@@ -30,53 +95,20 @@ variable "k8s_grafana_namespace" {
   default = "monitoring"
 }
 
-variable "k8s_alb_ingress_controller_namespace" {
-  type = string
-  description = "k8s ALB ingress controller namespace"
-  default = "kube-system"
-}
 
+# ALB ingress controller
 variable "enable_alb_ingress_controller" {
   type = bool
   description = "boolean to enable alb ingress controller"
   default = false
 }
 
-variable "cluster_version" {
+variable "k8s_alb_ingress_controller_namespace" {
   type = string
-  description = "cluster version"
-  default = ""
+  description = "k8s ALB ingress controller namespace"
+  default = "kube-system"
 }
 
-variable "eks_cluster_id" {
-  type = string
-  description = "cluster id"
-  default = ""
-}
-
-variable "eks_cluster_name" {
-  type = string
-  description = "cluster name"
-  default = ""
-}
-
-variable "node_group_name" {
-  type = string
-  description = "managed node group name"
-  default = ""
-}
-
-variable "region" {
-  type = string
-  description = "region"
-  default = ""
-}
-
-variable "azs" {
-  type = list(string)
-  description = "list of availability zones"
-  default = []
-}
 
 # Karpenter
 variable "enable_karpenter" {
@@ -85,17 +117,6 @@ variable "enable_karpenter" {
   default = false
 }
 
-variable "managed_node_group_iam_instance_profile_id" {
-  type = string
-  description = "IAM instance profile id of managed node groups"
-  default = ""
-}
-
-variable "worker_node_security_group_id" {
-  type = string
-  description = "ID of the worker node shared security group"
-  default = ""
-}
 
 variable "karpenter_tag_name" {
   type = string
@@ -103,24 +124,10 @@ variable "karpenter_tag_name" {
   default = ""
 }
 
-variable "block_device_mappings_volume_type" {
-  type = string
-  description = "Volume type to assign to the instance"
-  default = ""
-}
-
-variable "block_device_mappings_volume_size" {
-  type = string
-  description = "Size of volume type"
-  default = ""
-}
 
 
-variable "enable_grafana" {
-  type = bool
-  description = "Boolean to enable grafana add-on"
-  default = false
-}
+
+
 
 variable "enable_amazon_eks_vpc_cni" {
   type = bool
@@ -141,6 +148,7 @@ variable "enable_amazon_eks_aws_ebs_csi_driver" {
   type = bool
   default = false
 }
+
 
 variable "enable_argocd" {
   type = bool
@@ -167,10 +175,10 @@ variable "enable_metrics_server" {
   default = false
 }
 
-variable "enable_prometheus" {
-  type = bool
-  default = false
-}
+# variable "enable_prometheus" {
+#   type = bool
+#   default = false
+# }
 
 variable "enable_ingress_nginx" {
   type = bool
@@ -187,10 +195,10 @@ variable "enable_traefik" {
   default = false
 }
 
-variable "enable_agones" {
-  type = bool
-  default = false
-}
+# variable "enable_agones" {
+#   type = bool
+#   default = false
+# }
 
 variable "enable_spark_k8s_operator" {
   type = bool
