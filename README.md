@@ -4,7 +4,7 @@ This repository has been extracted from https://github.com/aws-ia/terraform-aws-
 
 ## Usage
 This is a basic usage of the module:
-```
+```tf
 module "eks-addons" {
   source = "git@bitbucket.org:beetobit/terraform-aws-eks-addons.git?ref=1.0"
 
