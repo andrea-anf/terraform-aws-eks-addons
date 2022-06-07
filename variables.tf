@@ -149,6 +149,10 @@ variable "enable_amazon_eks_aws_ebs_csi_driver" {
   default = false
 }
 
+variable "enable_efs_csi_driver" {
+  type = bool
+  default = false
+}
 
 variable "enable_argocd" {
   type = bool
