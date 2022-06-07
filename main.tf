@@ -86,7 +86,7 @@ module "grafana" {
 module "efs_csi_driver" {
   source = "git::https://github.com/DNXLabs/terraform-aws-eks-efs-csi-driver.git"
   enabled = var.enable_efs_csi_driver
-  cluster_name                     = var.cluster_id
+  cluster_name                     = var.eks_cluster_id
   cluster_identity_oidc_issuer     = var.eks_oidc_issuer_url
   cluster_identity_oidc_issuer_arn = var.eks_oidc_provider_arn
 }

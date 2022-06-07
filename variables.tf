@@ -154,6 +154,7 @@ variable "enable_efs_csi_driver" {
   default = false
 }
 
+
 variable "enable_argocd" {
   type = bool
   default = false
